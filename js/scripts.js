@@ -18,11 +18,12 @@ Object.prototype.orderPrice = function () {
     var meatPrice = 1.50;
     var veggiePrice = .50;
 
-    if (this.pizza_size == "large") {
+    // pizza size 1 corresponds to large, 2 to medium, 3 small
+    if (this.pizza_size == 1) {
         var size = 20.00;
-    } else if (this.pizza_size == "medium") {
+    } else if (this.pizza_size == 2) {
         var size = 15.00;
-    } else if (this.pizza_size == "small") {
+    } else if (this.pizza_size == 3) {
         var size = 10.00;
     }
 

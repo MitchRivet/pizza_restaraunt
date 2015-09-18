@@ -10,10 +10,12 @@ describe('Order', function() {
   });
 
   it("takes numbers for size, quantity, # of veggie toppings and # of meat toppings", function() {
-    var testOrder = new Order(1,"large", 1, 2);
+    var testOrder = new Order(1, 1, 1, 2);
     var price = testOrder.orderPrice();
     expect(price).to.equal(23.50);
     });
+
+    
 
 
 

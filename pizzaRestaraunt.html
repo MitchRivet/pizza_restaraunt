@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <title>Pizza Restaraunt</title>
+    </head>
+    <body>
+        <div class="container">
+        <h1>What kind of pizza would you like to order?</h1>
+
+                        <div class="form-group">
+                          <label for="pizza_size">Pizza Size</label>
+                          <select id="pizza_size" class="form-control pizza_size">
+                              <option value= 1>Large</option>
+                              <option value= 2>Medium</option>
+                              <option value = 3>Small</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="quantity">How many would you like?</label>
+                            <input type="number" class="form-control" id="quantity">
+                        </div>
+
+                        <fieldset>
+                            <legend>Please select your veggie toppings</legend>
+                            <input type="radio"  id="spinach" value="spinach" /><label for="spinach">Spinach</label><br />
+                            <input type="radio"  id="olives" value="olives"  /><label for="olives">Olives</label><br />
+                            <input type="radio"  id="artichoke" value="artichoke" /><label for="artichoke">artichokes</label><br />
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Please select your meat toppings</legend>
+                            <input type="radio"  id="pepperoni" value="pepperoni" /><label for="pepperoni">pepperoni</label><br />
+                            <input type="radio"  id="sausage" value="sausage"  /><label for="sausage">sausage</label><br />
+                            <input type="radio"  id="chicken" value="chicken" /><label for="chicken">chicken</label><br />
+                        </fieldset>
+
+        <button style="btn">Get price</button>
+        </div>
+    </body>
+</html>
