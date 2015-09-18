@@ -30,7 +30,52 @@ Object.prototype.orderPrice = function () {
     var final_price = this.quantity * size + (this.veggies * veggiePrice + this.meats * meatPrice);
     return final_price;
 }
-//
-// $(document).ready(function() {
-//
-// });
+
+$(document).ready(function() {
+    var veggies_array = [];
+    $('#spinach').change(function() {
+        var spinach = $("#spinach").val();
+        veggies_array.push(spinach)
+    });
+
+    $('#olives').change(function() {
+        var olives = $("#olives").val();
+        veggies_array.push(olives)
+    });
+
+    $('#artichoke').change(function() {
+        var artichoke = $("#artichoke").val();
+        veggies_array.push(artichoke)
+        console.log(veggies_array);
+    });
+
+    $(".btn").click(function() {
+        var quantity = $("#quantity").val();
+
+        var size = $("#pizza_size").val();
+
+
+        countV = 0;
+        for (var x in veggies_array) {
+            if (x != "") {
+                countV++
+            }
+        }
+
+        console.log(countV);
+
+        var order = new Order(quantity, size, countV, countM = 0);
+        var order_price = order.orderPrice();
+
+        console.log(order_price);
+
+        $("#show-price").text(order_price);
+
+        // for (var i=0; i<veggies_array.length; i++) {
+        //     if i
+        // }
+
+
+
+    });
+});
