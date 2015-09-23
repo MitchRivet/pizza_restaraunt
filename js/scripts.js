@@ -33,6 +33,8 @@ Object.prototype.orderPrice = function () {
 
 $(document).ready(function() {
     var veggies_array = [];
+    var meats_array = [];
+
     $('#spinach').change(function() {
         var spinach = $("#spinach").val();
         veggies_array.push(spinach)
@@ -49,6 +51,22 @@ $(document).ready(function() {
         console.log(veggies_array);
     });
 
+    $('#pepperoni').change(function() {
+        var pepperoni = $("#pepperoni").val();
+        meats_array.push(pepperoni)
+    });
+
+    $('#sausage').change(function() {
+        var sausage = $("#sausage").val();
+        meats_array.push(sausage)
+    });
+
+    $('#chicken').change(function() {
+        var chicken = $("#chicken").val();
+        meats_array.push(chicken)
+        console.log(meats_array);
+    });
+
     $(".btn").click(function() {
         var quantity = $("#quantity").val();
 
@@ -57,16 +75,26 @@ $(document).ready(function() {
 
         countV = 0;
         for (var x in veggies_array) {
-            if (x != "") {
+
                 countV++
-            }
+
         }
 
         console.log(countV);
 
-        var order = new Order(quantity, size, countV, countM = 0);
+        countM = 0;
+        for (var x in meats_array) {
+            {
+                countM++
+            }
+        }
+
+        console.log(countM);
+
+        var order = new Order(quantity, size, countV, countM);
         var order_price = order.orderPrice();
 
+        console.log(order); 
         console.log(order_price);
 
         $("#show-price").text(order_price);
