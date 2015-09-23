@@ -48,7 +48,7 @@ $(document).ready(function() {
     $('#artichoke').change(function() {
         var artichoke = $("#artichoke").val();
         veggies_array.push(artichoke)
-        console.log(veggies_array);
+
     });
 
     $('#pepperoni').change(function() {
@@ -64,7 +64,7 @@ $(document).ready(function() {
     $('#chicken').change(function() {
         var chicken = $("#chicken").val();
         meats_array.push(chicken)
-        console.log(meats_array);
+
     });
 
     $(".btn").click(function() {
@@ -72,8 +72,9 @@ $(document).ready(function() {
 
         var size = $("#pizza_size").val();
 
-
+        console.log(meats_array);
         countV = 0;
+        console.log(countV);
         for (var x in veggies_array) {
 
                 countV++
@@ -83,10 +84,9 @@ $(document).ready(function() {
         console.log(countV);
 
         countM = 0;
+        console.log(countM);
         for (var x in meats_array) {
-            {
                 countM++
-            }
         }
 
         console.log(countM);
@@ -94,10 +94,9 @@ $(document).ready(function() {
         var order = new Order(quantity, size, countV, countM);
         var order_price = order.orderPrice();
 
-        console.log(order); 
-        console.log(order_price);
+        console.log(order);
 
-        $("#show-price").text(order_price);
+        $("#show-price").text(order_price - 2);
 
         // for (var i=0; i<veggies_array.length; i++) {
         //     if i
