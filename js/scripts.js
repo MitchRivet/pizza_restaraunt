@@ -27,7 +27,7 @@ Object.prototype.orderPrice = function () {
         var size = 10.00;
     }
 
-    var final_price = this.quantity * size + (this.veggies * veggiePrice + this.meats * meatPrice);
+    var final_price = this.quantity * size + this.quantity * (this.veggies * veggiePrice + this.meats * meatPrice);
     return final_price;
 }
 
@@ -96,7 +96,7 @@ $(document).ready(function() {
 
         console.log(order);
 
-        $("#show-price").text(order_price - 2);
+        $("#show-price").text(order_price - (2 * quantity));
 
         // for (var i=0; i<veggies_array.length; i++) {
         //     if i
